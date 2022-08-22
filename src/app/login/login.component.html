@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<app-first-navbar></app-first-navbar>
+<mat-divider class="bg-cyan-400"></mat-divider>    
+<body>
+    <div class="h-4/5 bg-left bg-no-repeat" style="background-image: url('../../assets/images/Image-hospital1.png');">
+    <div class="pt-48"></div>
+    <table class="w-full">
+          <mat-card class="w-1/4 ml-auto mr-10">
+            <mat-card-title class="text-left">Bienvenido</mat-card-title>
+            <form class="text-left">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Usuario</mat-label>
+              <input matInput placeholder="Ingrese usuario" required>
+              <mat-error>Es requerido</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Contraseña</mat-label>
+              <input matInput placeholder="Ingrese contraseña" required>
+              <mat-error>Es requerido</mat-error>
+            </mat-form-field>
+            </form>
+            <p class="text-blue-600 text-right">¿Olvidaste tu contraseña? <a href="https://www.google.com">Click Aquí</a></p>
+            <br>
+            <div class="text-center">
+              <button class = "w-full" color = "primary" mat-raised-button>Ingresar</button>
+            </div>
+            <br>
+            <p class="text-black text-center">¿Si no tienes una cuenta? <a class="text-blue-600" routerLink="/register-user">Regístrate Aquí</a></p>
+          </mat-card>
+    </table>
+    <div class="pb-10"></div>
+  </div>
+</body>
