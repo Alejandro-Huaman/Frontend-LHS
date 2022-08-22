@@ -10,8 +10,8 @@
             <form class="text-left">
             <mat-form-field appearance="outline" class="w-full">
               <mat-label>Nombre</mat-label>
-              <input matInput placeholder="Ingrese nombre" required>
-              <mat-error>Es requerido</mat-error>
+              <input matInput placeholder="Ingrese nombre" name="nombre" required>
+              <mat-error *ngIf="nombre.invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
@@ -75,7 +75,7 @@
             </mat-form-field>
             </form>
             <div class="text-center">
-              <button color = "primary" mat-raised-button routerLink="/login">Registrarse</button>
+              <button color = "primary" mat-raised-button (click)="RegisterMethod()">Registrarse</button>
             </div>
           </mat-card>
     </table>

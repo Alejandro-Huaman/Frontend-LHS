@@ -8,13 +8,15 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { FirstNavbarComponent } from './first-navbar/first-navbar.component';
+import { ResultDialogComponent } from './register-user/result-dialog/result-dialog.component';
 
 @NgModule({
   declarations: [			
     AppComponent,
       RegisterUserComponent,
       LoginComponent,
-      FirstNavbarComponent
+      FirstNavbarComponent,
+      ResultDialogComponent
    ],
   imports: [
     BrowserModule,
