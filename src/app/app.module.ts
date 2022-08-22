@@ -11,15 +11,17 @@ import { FirstNavbarComponent } from './first-navbar/first-navbar.component';
 import { ResultDialogComponent } from './result-dialog/result-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterMedicalComponent } from './register-medical/register-medical.component';
+import { RegisterStaffComponent } from './register-staff/register-staff.component';
 
 @NgModule({
-  declarations: [				
+  declarations: [					
     AppComponent,
       RegisterUserComponent,
       LoginComponent,
       FirstNavbarComponent,
       ResultDialogComponent,
-      RegisterMedicalComponent
+      RegisterMedicalComponent,
+      RegisterStaffComponent
    ],
   imports: [
     BrowserModule,
