@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { FirstNavbarComponent } from './first-navbar/first-navbar.component';
 import { ResultDialogComponent } from './register-user/result-dialog/result-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [			
@@ -22,7 +23,8 @@ import { ResultDialogComponent } from './register-user/result-dialog/result-dial
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

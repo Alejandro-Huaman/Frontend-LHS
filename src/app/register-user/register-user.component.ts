@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ResultDialogComponent } from './result-dialog/result-dialog.component';
-import {FormControl, Validators} from '@angular/forms';
+import {FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-register-user',
@@ -10,12 +10,23 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class RegisterUserComponent implements OnInit {
   
-  nombre = new FormControl('', [Validators.required]);
+  userregisterform!:FormGroup;
 
-  constructor(public dialog:MatDialog) { }
+  constructor(public dialog:MatDialog, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-
+    this.userregisterform=this.formBuilder.group({
+      name:['',Validators.required],
+      patternlastname:['',Validators.required],
+      matternlastname:['',Validators.required],
+      sex:['',Validators.required],
+      email:['',Validators.required],
+      phone:['',Validators.required],
+      document:['',Validators.required],
+      numberdocument:['',Validators.required],
+      username:['',Validators.required],
+      password:['',Validators.required],
+     })
   }
 
   RegisterMethod(){

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   
-
-  constructor() { }
+  loginform!: FormGroup
+  hide:boolean = true
+  
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.loginform=this.formBuilder.group({
+      username:['',Validators.required],
+      password:['',Validators.required]
+     })
   }
 
 }
