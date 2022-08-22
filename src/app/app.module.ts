@@ -8,16 +8,18 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { FirstNavbarComponent } from './first-navbar/first-navbar.component';
-import { ResultDialogComponent } from './register-user/result-dialog/result-dialog.component';
+import { ResultDialogComponent } from './result-dialog/result-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterMedicalComponent } from './register-medical/register-medical.component';
 
 @NgModule({
-  declarations: [			
+  declarations: [				
     AppComponent,
       RegisterUserComponent,
       LoginComponent,
       FirstNavbarComponent,
-      ResultDialogComponent
+      ResultDialogComponent,
+      RegisterMedicalComponent
    ],
   imports: [
     BrowserModule,

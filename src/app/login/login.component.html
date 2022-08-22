@@ -29,7 +29,14 @@
               <button class = "w-full" color = "primary" mat-raised-button [disabled]="loginform.invalid">Ingresar</button>
             </div>
             <br>
-            <p class="text-black text-center">¿Si no tienes una cuenta? <a class="text-blue-600" routerLink="/register-user">Regístrate Aquí</a></p>
+            <p class="text-black text-center">¿Si no tienes una cuenta?</p>
+            <br>
+            <a class="text-blue-600 pr-10" routerLink="/register-medical">Regístrate Aquí Medico</a>
+            <a class="text-blue-600 pl-14" routerLink="/register-user">Regístrate Aquí Paciente</a>
+            <br>
+            <div class = "text-center">
+              <a class="text-blue-600" routerLink="/register-user">Regístrate Aquí Personal</a>
+            </div>
             </form>
           </mat-card>
     </table>

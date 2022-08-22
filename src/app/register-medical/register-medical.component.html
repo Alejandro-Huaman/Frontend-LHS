@@ -6,24 +6,24 @@
     <div class="pt-10"></div>
     <table class="w-full">
           <mat-card class="w-2/6 ml-auto mr-5">
-            <mat-card-title class="text-left">Regístrate Paciente</mat-card-title>
-            <form class="form text-left" [formGroup]="userregisterform">
+            <mat-card-title class="text-left">Regístrate Medico</mat-card-title>
+            <form class="form text-left" [formGroup]="medicalregisterform">
             <mat-form-field appearance="outline" class="w-full">
               <mat-label>Nombre</mat-label>
               <input matInput placeholder="Ingrese nombre" formControlName="name" required>
-              <mat-error *ngIf="userregisterform.controls['name'].dirty && userregisterform.hasError('required') || userregisterform.controls['name'].invalid">Complete este campo es requerido!</mat-error>
+              <mat-error *ngIf="medicalregisterform.controls['name'].dirty && medicalregisterform.hasError('required') || medicalregisterform.controls['name'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
               <mat-label>Apellido Paterno</mat-label>
               <input matInput placeholder="Ingrese apellido paterno" formControlName="patternlastname" required>
-              <mat-error *ngIf="userregisterform.controls['patternlastname'].dirty && userregisterform.hasError('required') || userregisterform.controls['patternlastname'].invalid">Complete este campo es requerido!</mat-error>
+              <mat-error *ngIf="medicalregisterform.controls['patternlastname'].dirty && medicalregisterform.hasError('required') || medicalregisterform.controls['patternlastname'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
               <mat-label>Apellido Materno</mat-label>
               <input matInput placeholder="Ingrese apellido materno" formControlName="matternlastname" required>
-              <mat-error *ngIf="userregisterform.controls['matternlastname'].dirty && userregisterform.hasError('required') || userregisterform.controls['matternlastname'].invalid">Complete este campo es requerido!</mat-error>
+              <mat-error *ngIf="medicalregisterform.controls['matternlastname'].dirty && medicalregisterform.hasError('required') || medicalregisterform.controls['matternlastname'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
@@ -32,19 +32,19 @@
                 <mat-option value="uno">Masculino</mat-option>
                 <mat-option value="dos">Femenino</mat-option>
               </mat-select>
-              <mat-error *ngIf="userregisterform.controls['sex'].dirty && userregisterform.hasError('required') || userregisterform.controls['sex'].invalid">Complete este campo es requerido!</mat-error>
+              <mat-error *ngIf="medicalregisterform.controls['sex'].dirty && medicalregisterform.hasError('required') || medicalregisterform.controls['sex'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
               <mat-label>Email</mat-label>
               <input matInput placeholder="Ingrese email" formControlName="email" required>
-              <mat-error *ngIf="userregisterform.controls['email'].dirty && userregisterform.hasError('required') || userregisterform.controls['email'].invalid">Complete este campo es requerido!</mat-error>
+              <mat-error *ngIf="medicalregisterform.controls['email'].dirty && medicalregisterform.hasError('required') || medicalregisterform.controls['email'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
               <mat-label>Telefono</mat-label>
               <input matInput placeholder="Ingrese telefono" formControlName="phone" required>
-              <mat-error *ngIf="userregisterform.controls['phone'].dirty && userregisterform.hasError('required') || userregisterform.controls['phone'].invalid">Complete este campo es requerido!</mat-error>
+              <mat-error *ngIf="medicalregisterform.controls['phone'].dirty && medicalregisterform.hasError('required') || medicalregisterform.controls['phone'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
@@ -53,29 +53,29 @@
                 <mat-option value="uno">DNI</mat-option>
                 <mat-option value="dos">Carnet de Extranjeria</mat-option>
               </mat-select>
-              <mat-error *ngIf="userregisterform.controls['document'].dirty && userregisterform.hasError('required') || userregisterform.controls['document'].invalid">Complete este campo es requerido!</mat-error>
+              <mat-error *ngIf="medicalregisterform.controls['document'].dirty && medicalregisterform.hasError('required') || medicalregisterform.controls['document'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
               <mat-label>Numero de Documento</mat-label>
               <input matInput placeholder="Ingrese Numero de documento" formControlName="numberdocument" required>
-              <mat-error *ngIf="userregisterform.controls['numberdocument'].dirty && userregisterform.hasError('required') || userregisterform.controls['numberdocument'].invalid">Complete este campo es requerido!</mat-error>
+              <mat-error *ngIf="medicalregisterform.controls['numberdocument'].dirty && medicalregisterform.hasError('required') || medicalregisterform.controls['numberdocument'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
               <mat-label>Usuario</mat-label>
               <input matInput placeholder="Ingrese nombre de usuario" formControlName="username" required>
-              <mat-error *ngIf="userregisterform.controls['username'].dirty && userregisterform.hasError('required') || userregisterform.controls['username'].invalid">Complete este campo es requerido!</mat-error>
+              <mat-error *ngIf="medicalregisterform.controls['username'].dirty && medicalregisterform.hasError('required') || medicalregisterform.controls['username'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
               <mat-label>Contraseña</mat-label>
               <input matInput placeholder="Ingrese contraseña" formControlName="password" required>
-              <mat-error *ngIf="userregisterform.controls['password'].dirty && userregisterform.hasError('required') || userregisterform.controls['password'].invalid">Complete este campo es requerido!</mat-error>
+              <mat-error *ngIf="medicalregisterform.controls['password'].dirty && medicalregisterform.hasError('required') || medicalregisterform.controls['password'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             
             <div class="text-center">
-              <button color = "primary" mat-raised-button (click)="RegisterMethod()" [disabled]="userregisterform.invalid">Registrarse</button>
+              <button color = "primary" mat-raised-button (click)="RegisterMethod()" [disabled]="medicalregisterform.invalid">Registrarse</button>
             </div>  
           </form>
           </mat-card>
