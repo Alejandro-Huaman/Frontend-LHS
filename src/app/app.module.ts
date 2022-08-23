@@ -13,9 +13,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterMedicalComponent } from './register-medical/register-medical.component';
 import { RegisterStaffComponent } from './register-staff/register-staff.component';
 import { HomeComponent } from './home/home.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 @NgModule({
-  declarations: [						
+  declarations: [							
     AppComponent,
       RegisterUserComponent,
       LoginComponent,
@@ -23,7 +24,8 @@ import { HomeComponent } from './home/home.component';
       ResultDialogComponent,
       RegisterMedicalComponent,
       RegisterStaffComponent,
-      HomeComponent
+      HomeComponent,
+      AppointmentComponent
    ],
   imports: [
     BrowserModule,
