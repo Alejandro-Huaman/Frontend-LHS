@@ -18,5 +18,36 @@
 </header>
 <mat-divider class="bg-cyan-400"></mat-divider>
 <body class="bg-white">
-  
+  <div class="pt-10"></div>
+  <table>
+    <tr>
+        <th class="font-normal pb-80">
+          <mat-card class="demo-inline-calendar-card w-72 h-80 ml-10">
+            <mat-calendar class="w-60 h-20" [(selected)]="selecteddate"></mat-calendar>
+            </mat-card>
+        </th>
+        <div class="pr-20"></div>
+        <th class="font-normal">
+          <mat-card class="w-full" *ngFor="let medical of medicals">
+            <div class="inline-flex">
+              <img src="../../assets/images/medical-profile.png">
+              <div class="pr-10"></div>
+              <h1 class="pt-2">{{medical}}
+                <div class="pt-5"></div>
+                <div class="text-left">
+                  <button mat-stroked-button>Nefrología</button>
+                </div>
+              </h1>
+              <div class="mr-96"></div>
+              <div class="mr-96"></div>
+              <span class="pt-2">
+                <button mat-raised-button color="primary" class="h-10" routerLink="/medical-schedule">Ver Horario</button>
+              </span>
+              <div class="pr-3"></div>
+            </div>
+            <br>
+          </mat-card>
+        </th>
+    </tr>
+  </table>
 </body>

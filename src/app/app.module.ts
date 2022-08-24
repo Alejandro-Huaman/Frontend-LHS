@@ -14,6 +14,8 @@ import { RegisterMedicalComponent } from './register-medical/register-medical.co
 import { RegisterStaffComponent } from './register-staff/register-staff.component';
 import { HomeComponent } from './home/home.component';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { MedicalScheduleComponent } from './appointment/medical-schedule/medical-schedule.component';
+import { ResultDialogAppointmentComponent } from './appointment/medical-schedule/result-dialog-appointment/result-dialog-appointment.component';
 
 @NgModule({
   declarations: [							
@@ -25,7 +27,9 @@ import { AppointmentComponent } from './appointment/appointment.component';
       RegisterMedicalComponent,
       RegisterStaffComponent,
       HomeComponent,
-      AppointmentComponent
+      AppointmentComponent,
+      MedicalScheduleComponent,
+      ResultDialogAppointmentComponent
    ],
   imports: [
     BrowserModule,
