@@ -5,7 +5,7 @@ import { MedicalScheduleComponent } from './appointment/medical-schedule/medical
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MedicalRecordsComponent } from './medical-records/medical-records.component';
-import { PatientRecordComponent } from './patient-record/patient-record.component';
+import { PatientRecordComponent } from './medical-records/patient-record/patient-record.component';
 import { RegisterMedicalComponent } from './register-medical/register-medical.component';
 import { RegisterStaffComponent } from './register-staff/register-staff.component';
 import { RegisterUserComponent } from './register-user/register-user.component';

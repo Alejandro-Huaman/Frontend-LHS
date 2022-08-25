@@ -17,7 +17,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { MedicalScheduleComponent } from './appointment/medical-schedule/medical-schedule.component';
 import { ResultDialogAppointmentComponent } from './appointment/medical-schedule/result-dialog-appointment/result-dialog-appointment.component';
 import { MedicalRecordsComponent } from './medical-records/medical-records.component';
-import { PatientRecordComponent } from './patient-record/patient-record.component';
+import { PatientRecordComponent } from './medical-records/patient-record/patient-record.component';
 
 @NgModule({
   declarations: [									
