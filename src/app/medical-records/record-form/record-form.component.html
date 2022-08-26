@@ -1,0 +1,379 @@
+<header>
+  <mat-toolbar class="bg-white">
+    <button routerLink="/medical-records">
+      <img src="../../assets/images/back-arrow-2.png" class="w-10 h-10">
+    </button>
+    <span class="pr-5"></span>
+    <h1 class="text-slate-800">Clinica de salud</h1>
+    <span class="flex-auto"></span>
+    <h1 class="text-slate-800">NUEVA HISTORIA</h1>
+    <span class="flex-auto"></span>
+    <img src="../../assets/images/profile.png" class="w-10 h-10">
+    <button>
+      <img src="../../assets/images/options-arrow.png" class="w-20 h-12">
+    </button>
+    <div class="pr-5"></div>
+</mat-toolbar>
+</header>
+<mat-divider class="bg-cyan-400"></mat-divider>
+<body>
+  <!--Datos del Paciente-->
+  <div class="pt-10"></div>
+    <button class="w-full" (click)="DisplayInfoPatient()">
+      <div class="pl-10 pr-10">
+        <mat-toolbar color="primary">
+          <h1>Datos del paciente</h1>
+          <div class="flex-auto"></div>
+          <h1>Servicio</h1>
+          <div class="pr-10"></div>
+          <h1>NEFROLOGÍA</h1>
+          <div class="pr-10"></div>
+          <img src="../../../assets/images/arrrow-down.png" class="w-10 h-5">
+          <div class="pr-20"></div>
+      </mat-toolbar>
+    </div>
+    </button>
+    <div *ngIf="displayinfo == true">
+    <div class="pb-20"></div>
+    <table class="ml-auto mr-auto w-11/12">
+    <tr>
+      <th>
+        <div class="inline-flex">
+          <h1 class="pt-5">Nombre</h1>
+          <span class="pr-10"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu nombre</mat-label>
+              <input matInput formControlName="name" placeholder="Ingrese su nombre" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+        <br>
+        <div class="inline-flex">
+          <h1 class="pt-5">Apellido</h1>
+          <span class="pr-10"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu apellido</mat-label>
+              <input matInput formControlName="lastname" placeholder="Ingrese su apellido" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+        <br>
+        <div class="inline-flex">
+          <h1 class="pt-5">Correo</h1>
+          <span class="pr-12"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu correo</mat-label>
+              <input matInput formControlName="email" placeholder="Ingrese su correo" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+      </th>
+      <th class="align-top">
+        <div class="inline-flex">
+          <h1 class="pt-5">Documento Nacional de Identidad</h1>
+          <span class="pr-10"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu DNI</mat-label>
+              <input matInput formControlName="dni" placeholder="Ingrese su DNI" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+        <br>
+        <div class="inline-flex">
+          <h1 class="pt-5">Teléfono de contacto</h1>
+          <span class="pr-32"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu teléfono</mat-label>
+              <input matInput formControlName="phone" placeholder="Ingrese su teléfono" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+      </th>
+    </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+      <div class="text-center">
+        <button mat-raised-button color="primary" class="w-40" (click)="RegisterMethod()" [disabled]="patientrecordform.invalid">Crear paciente</button>
+      </div>
+    </div>
+    <!--Antecedentes-->
+    <div class="pt-10"></div>
+    <button class="w-full" (click)="DisplayBackrecords()">
+      <div class="pl-10 pr-10">
+        <mat-toolbar color="primary">
+          <h1>Antecedentes</h1>
+          <div class="flex-auto"></div>
+          <div class="pr-10"></div>
+          <img src="../../../assets/images/arrrow-down.png" class="w-10 h-5">
+          <div class="pr-20"></div>
+      </mat-toolbar>
+    </div>
+    </button>
+    <div *ngIf="displayback == true">
+    <div class="pb-20"></div>
+    <table class="ml-auto mr-auto w-11/12">
+    <tr>
+      <th>
+        <div class="inline-flex">
+          <h1 class="pt-5">Nombre</h1>
+          <span class="pr-10"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu nombre</mat-label>
+              <input matInput formControlName="name" placeholder="Ingrese su nombre" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+        <br>
+        <div class="inline-flex">
+          <h1 class="pt-5">Apellido</h1>
+          <span class="pr-10"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu apellido</mat-label>
+              <input matInput formControlName="lastname" placeholder="Ingrese su apellido" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+        <br>
+        <div class="inline-flex">
+          <h1 class="pt-5">Correo</h1>
+          <span class="pr-12"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu correo</mat-label>
+              <input matInput formControlName="email" placeholder="Ingrese su correo" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+      </th>
+      <th class="align-top">
+        <div class="inline-flex">
+          <h1 class="pt-5">Documento Nacional de Identidad</h1>
+          <span class="pr-10"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu DNI</mat-label>
+              <input matInput formControlName="dni" placeholder="Ingrese su DNI" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+        <br>
+        <div class="inline-flex">
+          <h1 class="pt-5">Teléfono de contacto</h1>
+          <span class="pr-32"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu teléfono</mat-label>
+              <input matInput formControlName="phone" placeholder="Ingrese su teléfono" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+      </th>
+    </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+      <div class="text-center">
+        <button mat-raised-button color="primary" class="w-40" (click)="RegisterMethod()" [disabled]="patientrecordform.invalid">Crear paciente</button>
+      </div>
+    </div>
+    <!--Manejo Clinico-->
+    <div class="pt-10"></div>
+    <button class="w-full" (click)="DisplayClinicMethod()">
+      <div class="pl-10 pr-10">
+        <mat-toolbar color="primary">
+          <h1>Manejo clinico</h1>
+          <div class="flex-auto"></div>
+          <div class="pr-10"></div>
+          <img src="../../../assets/images/arrrow-down.png" class="w-10 h-5">
+          <div class="pr-20"></div>
+      </mat-toolbar>
+    </div>
+    </button>
+    <div *ngIf="displayclinic == true">
+    <div class="pb-20"></div>
+    <table class="ml-auto mr-auto w-11/12">
+    <tr>
+      <th>
+        <div class="inline-flex">
+          <h1 class="pt-5">Nombre</h1>
+          <span class="pr-10"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu nombre</mat-label>
+              <input matInput formControlName="name" placeholder="Ingrese su nombre" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+        <br>
+        <div class="inline-flex">
+          <h1 class="pt-5">Apellido</h1>
+          <span class="pr-10"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu apellido</mat-label>
+              <input matInput formControlName="lastname" placeholder="Ingrese su apellido" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+        <br>
+        <div class="inline-flex">
+          <h1 class="pt-5">Correo</h1>
+          <span class="pr-12"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu correo</mat-label>
+              <input matInput formControlName="email" placeholder="Ingrese su correo" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+      </th>
+      <th class="align-top">
+        <div class="inline-flex">
+          <h1 class="pt-5">Documento Nacional de Identidad</h1>
+          <span class="pr-10"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu DNI</mat-label>
+              <input matInput formControlName="dni" placeholder="Ingrese su DNI" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+        <br>
+        <div class="inline-flex">
+          <h1 class="pt-5">Teléfono de contacto</h1>
+          <span class="pr-32"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu teléfono</mat-label>
+              <input matInput formControlName="phone" placeholder="Ingrese su teléfono" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+      </th>
+    </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+      <div class="text-center">
+        <button mat-raised-button color="primary" class="w-40" (click)="RegisterMethod()" [disabled]="patientrecordform.invalid">Crear paciente</button>
+      </div>
+    </div>
+    <!--Tratamiento-->
+    <div class="pt-10"></div>
+    <button class="w-full" (click)="DisplayTreatmentMethod()">
+      <div class="pl-10 pr-10">
+        <mat-toolbar color="primary">
+          <h1>Tratamiento</h1>
+          <div class="flex-auto"></div>
+          <div class="pr-10"></div>
+          <img src="../../../assets/images/arrrow-down.png" class="w-10 h-5">
+          <div class="pr-20"></div>
+      </mat-toolbar>
+    </div>
+    </button>
+    <div *ngIf="displaytreatment == true">
+    <div class="pb-20"></div>
+    <table class="ml-auto mr-auto w-11/12">
+    <tr>
+      <th>
+        <div class="inline-flex">
+          <h1 class="pt-5">Nombre</h1>
+          <span class="pr-10"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu nombre</mat-label>
+              <input matInput formControlName="name" placeholder="Ingrese su nombre" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+        <br>
+        <div class="inline-flex">
+          <h1 class="pt-5">Apellido</h1>
+          <span class="pr-10"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu apellido</mat-label>
+              <input matInput formControlName="lastname" placeholder="Ingrese su apellido" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+        <br>
+        <div class="inline-flex">
+          <h1 class="pt-5">Correo</h1>
+          <span class="pr-12"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu correo</mat-label>
+              <input matInput formControlName="email" placeholder="Ingrese su correo" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+      </th>
+      <th class="align-top">
+        <div class="inline-flex">
+          <h1 class="pt-5">Documento Nacional de Identidad</h1>
+          <span class="pr-10"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu DNI</mat-label>
+              <input matInput formControlName="dni" placeholder="Ingrese su DNI" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+        <br>
+        <div class="inline-flex">
+          <h1 class="pt-5">Teléfono de contacto</h1>
+          <span class="pr-32"></span>
+          <form [formGroup]="patientrecordform">
+            <mat-form-field appearance="outline" class="w-96">
+              <mat-label>Tu teléfono</mat-label>
+              <input matInput formControlName="phone" placeholder="Ingrese su teléfono" required>
+              <mat-error>Es requerido este campo!</mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+      </th>
+    </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+      <div class="text-center">
+        <button mat-raised-button color="primary" class="w-40" (click)="RegisterMethod()" [disabled]="patientrecordform.invalid">Crear paciente</button>
+      </div>
+    </div>
+</body>

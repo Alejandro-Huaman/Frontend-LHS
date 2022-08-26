@@ -18,6 +18,8 @@ import { MedicalScheduleComponent } from './appointment/medical-schedule/medical
 import { ResultDialogAppointmentComponent } from './appointment/medical-schedule/result-dialog-appointment/result-dialog-appointment.component';
 import { MedicalRecordsComponent } from './medical-records/medical-records.component';
 import { PatientRecordComponent } from './medical-records/patient-record/patient-record.component';
+import { RecordFormComponent } from './medical-records/record-form/record-form.component';
+import { ResultDialogRecordComponent } from './medical-records/record-form/result-dialog-record/result-dialog-record.component';
 
 @NgModule({
   declarations: [									
@@ -33,7 +35,9 @@ import { PatientRecordComponent } from './medical-records/patient-record/patient
       MedicalScheduleComponent,
       ResultDialogAppointmentComponent,
       MedicalRecordsComponent,
-      PatientRecordComponent
+      PatientRecordComponent,
+      RecordFormComponent,
+      ResultDialogRecordComponent
    ],
   imports: [
     BrowserModule,
