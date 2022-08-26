@@ -125,77 +125,107 @@
     <div *ngIf="displayback == true">
     <div class="pb-20"></div>
     <table class="ml-auto mr-auto w-11/12">
-    <tr>
-      <th>
+      <tr>
         <div class="inline-flex">
-          <h1 class="pt-5">Nombre</h1>
+          <h1 class="pt-5 font-bold">Buscar Diagnóstico:</h1>
           <span class="pr-10"></span>
-          <form [formGroup]="patientrecordform">
+          <form [formGroup]="backrecordform">
             <mat-form-field appearance="outline" class="w-96">
-              <mat-label>Tu nombre</mat-label>
-              <input matInput formControlName="name" placeholder="Ingrese su nombre" required>
+              <mat-label>Tu diagnóstico</mat-label>
+              <input matInput formControlName="diagnostic" placeholder="Ingrese su diagnóstico" required>
               <mat-error>Es requerido este campo!</mat-error>
             </mat-form-field>
           </form>
         </div>
-        <br>
-        <div class="inline-flex">
-          <h1 class="pt-5">Apellido</h1>
-          <span class="pr-10"></span>
-          <form [formGroup]="patientrecordform">
-            <mat-form-field appearance="outline" class="w-96">
-              <mat-label>Tu apellido</mat-label>
-              <input matInput formControlName="lastname" placeholder="Ingrese su apellido" required>
-              <mat-error>Es requerido este campo!</mat-error>
-            </mat-form-field>
-          </form>
-        </div>
-        <br>
-        <div class="inline-flex">
-          <h1 class="pt-5">Correo</h1>
-          <span class="pr-12"></span>
-          <form [formGroup]="patientrecordform">
-            <mat-form-field appearance="outline" class="w-96">
-              <mat-label>Tu correo</mat-label>
-              <input matInput formControlName="email" placeholder="Ingrese su correo" required>
-              <mat-error>Es requerido este campo!</mat-error>
-            </mat-form-field>
-          </form>
-        </div>
-      </th>
-      <th class="align-top">
-        <div class="inline-flex">
-          <h1 class="pt-5">Documento Nacional de Identidad</h1>
-          <span class="pr-10"></span>
-          <form [formGroup]="patientrecordform">
-            <mat-form-field appearance="outline" class="w-96">
-              <mat-label>Tu DNI</mat-label>
-              <input matInput formControlName="dni" placeholder="Ingrese su DNI" required>
-              <mat-error>Es requerido este campo!</mat-error>
-            </mat-form-field>
-          </form>
-        </div>
-        <br>
-        <div class="inline-flex">
-          <h1 class="pt-5">Teléfono de contacto</h1>
-          <span class="pr-32"></span>
-          <form [formGroup]="patientrecordform">
-            <mat-form-field appearance="outline" class="w-96">
-              <mat-label>Tu teléfono</mat-label>
-              <input matInput formControlName="phone" placeholder="Ingrese su teléfono" required>
-              <mat-error>Es requerido este campo!</mat-error>
-            </mat-form-field>
-          </form>
-        </div>
-      </th>
-    </tr>
+      </tr>  
+      <br>
+      <tr>
+        <table class="w-full border-2">
+          <tr>
+            <th class="border-2">
+              <div class="pb-3"></div>
+              <h1>Código</h1>
+              <div class="pb-3"></div>
+              <mat-divider></mat-divider>
+              <div class="pb-3"></div>
+              <h2 class="font-normal">B12</h2>
+              <div class="pb-3"></div>
+              <mat-divider></mat-divider>
+              <div class="pb-3"></div>
+              <h2 class="font-normal">B23</h2>
+              <div class="pb-3"></div>
+              <mat-divider></mat-divider>
+              <div class="pb-3"></div>
+              <h2 class="font-normal">A34</h2>
+              <div class="pb-3"></div>
+            </th>
+            <th class="border-2">
+              <h1>Descripción</h1>
+              <div class="pb-3"></div>
+              <mat-divider></mat-divider>
+              <div class="pb-3"></div>
+              <h2 class="font-normal">Hipertensión arterial</h2>
+              <div class="pb-3"></div>
+              <mat-divider></mat-divider>
+              <div class="pb-3"></div>
+              <h2 class="font-normal">Diabetes Mellitus</h2>
+              <div class="pb-3"></div>
+              <mat-divider></mat-divider>
+              <div class="pb-3"></div>
+              <h2 class="font-normal">Obesidad mórbida</h2>
+            </th>
+            <th class="border-2">
+              <h1>Tipo enfermedad</h1>
+              <div class="pb-3"></div>
+              <mat-divider></mat-divider>
+              <div class="pb-3"></div>
+              <h2 class="font-normal">Accord</h2>
+              <div class="pb-3"></div>
+              <mat-divider></mat-divider>
+              <div class="pb-3"></div>
+              <h2 class="font-normal">Camry</h2>
+              <div class="pb-3"></div>
+              <mat-divider></mat-divider>
+              <div class="pb-3"></div>
+              <h2 class="font-normal">Elantra</h2>
+            </th>
+            <th class="border-2">
+              <h1>Fecha Dx</h1>
+              <div class="pb-3"></div>
+              <mat-divider></mat-divider>
+              <div class="pb-3"></div>
+              <h2 class="font-normal">13/04/2013</h2>
+              <div class="pb-3"></div>
+              <mat-divider></mat-divider>
+              <div class="pb-3"></div>
+              <h2 class="font-normal">13/04/2010</h2>
+              <div class="pb-3"></div>
+              <mat-divider></mat-divider>
+              <div class="pb-3"></div>
+              <h2 class="font-normal">13/04/2018</h2>
+            </th>
+            <th class="align-top border-2">
+              <div class="pb-3"></div>
+              <h1>Observación</h1>
+              <div class="pb-3"></div>
+              <mat-divider></mat-divider>
+              <div class="pb-6"></div>
+              <div class="pb-6"></div>
+              <mat-divider></mat-divider>
+              <div class="pb-6"></div>
+              <div class="pb-6"></div>
+              <mat-divider></mat-divider>
+            </th>
+          </tr>
+        </table>
+      </tr>
     </table>
     <br>
     <br>
     <br>
     <br>
-      <div class="text-center">
-        <button mat-raised-button color="primary" class="w-40" (click)="RegisterMethod()" [disabled]="patientrecordform.invalid">Crear paciente</button>
+      <div class="text-right pr-20">
+        <button mat-raised-button color="primary" class="w-40" [disabled]="backrecordform.invalid">Guardar</button>
       </div>
     </div>
     <!--Manejo Clinico-->

@@ -14,6 +14,7 @@ export class RecordFormComponent implements OnInit {
   displayback!:boolean
   displayclinic!:boolean
   displaytreatment!:boolean
+  backrecordform!:FormGroup
 
   constructor(public dialog:MatDialog, private formBuilder:FormBuilder) { }
 
@@ -24,6 +25,9 @@ export class RecordFormComponent implements OnInit {
       email:['',Validators.required],
       dni:['',Validators.required],
       phone:['',Validators.required],
+     })
+     this.backrecordform = this.formBuilder.group({
+      diagnostic:['',Validators.required]
      })
      this.displayinfo = false;
      this.displayback = false;
