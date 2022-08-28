@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ResultDialogComponent } from '../result-dialog/result-dialog.component';
+import { ResultDialogComponent } from '../dialogs/result-dialog/result-dialog.component';
 import {FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
 
 @Component({

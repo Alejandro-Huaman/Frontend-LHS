@@ -225,7 +225,7 @@
     <br>
     <br>
       <div class="text-right pr-20">
-        <button mat-raised-button color="primary" class="w-40" [disabled]="backrecordform.invalid">Guardar</button>
+        <button mat-raised-button color="primary" class="w-40" [disabled]="backrecordform.invalid" (click)="SaveAncient()">Guardar</button>
       </div>
     </div>
     <!--Manejo Clinico-->
@@ -349,7 +349,7 @@
     </table>
     <br>
       <div class="text-right pr-20">
-        <button mat-raised-button color="primary" class="w-40" (click)="RegisterMethod()" [disabled]="clinicform.invalid">Guardar</button>
+        <button mat-raised-button color="primary" class="w-40" [disabled]="clinicform.invalid" (click)="SaveClinicManagement()">Guardar</button>
       </div>
     </div>
     <!--Tratamiento-->
@@ -366,66 +366,47 @@
     </div>
     </button>
     <div *ngIf="displaytreatment == true">
-    <div class="pb-20"></div>
-    <table class="ml-auto mr-auto w-11/12">
+    <div class="pb-10"></div>
+    <div class="pl-14 pr-14">
+      <h1 class="font-bold">Registrar tratamiento</h1>
+      <mat-divider class="bg-cyan-400"></mat-divider>
+    </div>
+    <div class="pt-5"></div>
+    <table class="ml-auto mr-auto w-full">
     <tr>
-      <th>
+      <th class="text-left pl-14">
         <div class="inline-flex">
-          <h1 class="pt-5">Nombre</h1>
+          <h1 class="pt-5">Medicamento</h1>
           <span class="pr-10"></span>
-          <form [formGroup]="patientrecordform">
+          <form [formGroup]="treatmentform">
             <mat-form-field appearance="outline" class="w-96">
-              <mat-label>Tu nombre</mat-label>
-              <input matInput formControlName="name" placeholder="Ingrese su nombre" required>
+              <mat-label>Tu medicamento</mat-label>
+              <input matInput formControlName="medication" placeholder="Ingrese el nombre del medicamento" required>
               <mat-error>Es requerido este campo!</mat-error>
             </mat-form-field>
           </form>
         </div>
         <br>
         <div class="inline-flex">
-          <h1 class="pt-5">Apellido</h1>
-          <span class="pr-10"></span>
-          <form [formGroup]="patientrecordform">
+          <h1 class="pt-5"># por día</h1>
+          <span class="pr-14"></span>
+          <span class="pr-5"></span>
+          <form [formGroup]="treatmentform">
             <mat-form-field appearance="outline" class="w-96">
-              <mat-label>Tu apellido</mat-label>
-              <input matInput formControlName="lastname" placeholder="Ingrese su apellido" required>
+              <mat-label>Tu número de dosis por dia</mat-label>
+              <input matInput formControlName="doses" placeholder="Ingrese su número de dosis por dia" required>
               <mat-error>Es requerido este campo!</mat-error>
             </mat-form-field>
           </form>
         </div>
         <br>
         <div class="inline-flex">
-          <h1 class="pt-5">Correo</h1>
-          <span class="pr-12"></span>
-          <form [formGroup]="patientrecordform">
+          <h1 class="pt-5">Indicación</h1>
+          <span class="pr-16"></span>
+          <form [formGroup]="treatmentform">
             <mat-form-field appearance="outline" class="w-96">
-              <mat-label>Tu correo</mat-label>
-              <input matInput formControlName="email" placeholder="Ingrese su correo" required>
-              <mat-error>Es requerido este campo!</mat-error>
-            </mat-form-field>
-          </form>
-        </div>
-      </th>
-      <th class="align-top">
-        <div class="inline-flex">
-          <h1 class="pt-5">Documento Nacional de Identidad</h1>
-          <span class="pr-10"></span>
-          <form [formGroup]="patientrecordform">
-            <mat-form-field appearance="outline" class="w-96">
-              <mat-label>Tu DNI</mat-label>
-              <input matInput formControlName="dni" placeholder="Ingrese su DNI" required>
-              <mat-error>Es requerido este campo!</mat-error>
-            </mat-form-field>
-          </form>
-        </div>
-        <br>
-        <div class="inline-flex">
-          <h1 class="pt-5">Teléfono de contacto</h1>
-          <span class="pr-32"></span>
-          <form [formGroup]="patientrecordform">
-            <mat-form-field appearance="outline" class="w-96">
-              <mat-label>Tu teléfono</mat-label>
-              <input matInput formControlName="phone" placeholder="Ingrese su teléfono" required>
+              <mat-label>Tu indicación</mat-label>
+              <input matInput formControlName="indication" placeholder="Ingrese su indicación" required>
               <mat-error>Es requerido este campo!</mat-error>
             </mat-form-field>
           </form>
@@ -434,11 +415,94 @@
     </tr>
     </table>
     <br>
-    <br>
-    <br>
-    <br>
-      <div class="text-center">
-        <button mat-raised-button color="primary" class="w-40" (click)="RegisterMethod()" [disabled]="patientrecordform.invalid">Crear paciente</button>
+      <div class="text-right pr-40">
+        <button mat-raised-button color="primary" class="w-40" [disabled]="treatmentform.invalid" (click)="SaveTreatment()">Guardar</button>
       </div>
+    <br>
+    <br>
+    <table class="mr-auto ml-auto w-11/12 border-2">
+      <tr>
+        <th class="border-2">
+          <div class="pb-3"></div>
+          <h1>#</h1>
+          <div class="pb-3"></div>
+          <mat-divider></mat-divider>
+          <div class="pb-3"></div>
+          <h2 class="font-normal">1</h2>
+          <div class="pb-3"></div>
+          <mat-divider></mat-divider>
+          <div class="pb-3"></div>
+          <h2 class="font-normal">3</h2>
+          <div class="pb-3"></div>
+          <mat-divider></mat-divider>
+          <div class="pb-3"></div>
+          <h2 class="font-normal">3</h2>
+          <div class="pb-3"></div>
+        </th>
+        <th class="border-2">
+          <h1>Medicamento</h1>
+          <div class="pb-3"></div>
+          <mat-divider></mat-divider>
+          <div class="pb-3"></div>
+          <h2 class="font-normal">Captopril</h2>
+          <div class="pb-3"></div>
+          <mat-divider></mat-divider>
+          <div class="pb-3"></div>
+          <h2 class="font-normal">Amoxicilina</h2>
+          <div class="pb-3"></div>
+          <mat-divider></mat-divider>
+          <div class="pb-3"></div>
+          <h2 class="font-normal">Heparina</h2>
+        </th>
+        <th class="border-2">
+          <h1>Cantidad diaria</h1>
+          <div class="pb-3"></div>
+          <mat-divider></mat-divider>
+          <div class="pb-3"></div>
+          <h2 class="font-normal">1</h2>
+          <div class="pb-3"></div>
+          <mat-divider></mat-divider>
+          <div class="pb-3"></div>
+          <h2 class="font-normal">2</h2>
+          <div class="pb-3"></div>
+          <mat-divider></mat-divider>
+          <div class="pb-3"></div>
+          <h2 class="font-normal">2</h2>
+        </th>
+        <th class="border-2">
+          <h1>Dias</h1>
+          <div class="pb-3"></div>
+          <mat-divider></mat-divider>
+          <div class="pb-3"></div>
+          <h2 class="font-normal">365</h2>
+          <div class="pb-3"></div>
+          <mat-divider></mat-divider>
+          <div class="pb-3"></div>
+          <h2 class="font-normal">365</h2>
+          <div class="pb-3"></div>
+          <mat-divider></mat-divider>
+          <div class="pb-3"></div>
+          <h2 class="font-normal">365</h2>
+        </th>
+        <th class="align-top border-2">
+          <div class="pb-3"></div>
+          <h1>Indicación</h1>
+          <div class="pb-3"></div>
+          <mat-divider></mat-divider>
+          <div class="pb-6"></div>
+          <div class="pb-6"></div>
+          <mat-divider></mat-divider>
+          <div class="pb-3"></div>
+          <h2 class="font-normal">Cada 12 horas</h2>
+          <div class="pb-3"></div>
+          <mat-divider></mat-divider>
+          <div class="pb-3"></div>
+          <h2 class="font-normal">Cada 12 horas</h2>
+          <div class="pb-3"></div>
+        </th>
+      </tr>
+    </table>
+    <div class="pb-40"></div>
     </div>
+    <div class="pb-10"></div>
 </body>

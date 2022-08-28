@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ResultDialogRecordComponent } from './result-dialog-record/result-dialog-record.component';
+import { ResultDialogRecordComponent } from '../../dialogs/result-dialog-record/result-dialog-record.component';
 import {FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
+import { ResultDialogAncientComponent } from 'src/app/dialogs/result-dialog-ancient/result-dialog-ancient.component';
+import { ResultDialogClinicComponent } from 'src/app/dialogs/result-dialog-clinic/result-dialog-clinic.component';
+import { ResultDialogTreatmentComponent } from 'src/app/dialogs/result-dialog-treatment/result-dialog-treatment.component';
 
 @Component({
   selector: 'app-record-form',
@@ -16,6 +19,7 @@ export class RecordFormComponent implements OnInit {
   displaytreatment!:boolean
   backrecordform!:FormGroup
   clinicform!:FormGroup
+  treatmentform!:FormGroup
 
   constructor(public dialog:MatDialog, private formBuilder:FormBuilder) { }
 
@@ -37,6 +41,11 @@ export class RecordFormComponent implements OnInit {
       indicationtext:['',Validators.required],
       erc:['',Validators.required],
      })
+     this.treatmentform = this.formBuilder.group({
+      medication:['',Validators.required],
+      doses:['',Validators.required],
+      indication:['',Validators.required]
+     })
      this.displayinfo = false;
      this.displayback = false;
      this.displayclinic = false;
@@ -45,6 +54,18 @@ export class RecordFormComponent implements OnInit {
 
   RegisterMethod(){
     const dialogRef = this.dialog.open(ResultDialogRecordComponent)
+  }
+
+  SaveAncient(){
+    const dialogRef = this.dialog.open(ResultDialogAncientComponent)
+  }
+
+  SaveClinicManagement(){
+    const dialogRef = this.dialog.open(ResultDialogClinicComponent)
+  }
+
+  SaveTreatment(){
+    const dialogRef = this.dialog.open(ResultDialogTreatmentComponent)
   }
 
   DisplayInfoPatient(){

@@ -8,18 +8,19 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { FirstNavbarComponent } from './first-navbar/first-navbar.component';
-import { ResultDialogComponent } from './result-dialog/result-dialog.component';
+import { ResultDialogComponent } from './dialogs/result-dialog/result-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterMedicalComponent } from './register-medical/register-medical.component';
 import { RegisterStaffComponent } from './register-staff/register-staff.component';
 import { HomeComponent } from './home/home.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { MedicalScheduleComponent } from './appointment/medical-schedule/medical-schedule.component';
-import { ResultDialogAppointmentComponent } from './appointment/medical-schedule/result-dialog-appointment/result-dialog-appointment.component';
+import { ResultDialogAppointmentComponent } from './dialogs/result-dialog-appointment/result-dialog-appointment.component';
 import { MedicalRecordsComponent } from './medical-records/medical-records.component';
 import { PatientRecordComponent } from './medical-records/patient-record/patient-record.component';
 import { RecordFormComponent } from './medical-records/record-form/record-form.component';
-import { ResultDialogRecordComponent } from './medical-records/record-form/result-dialog-record/result-dialog-record.component';
+import { ResultDialogRecordComponent } from './dialogs/result-dialog-record/result-dialog-record.component';
+import { ResultDialogAncientComponent } from './dialogs/result-dialog-ancient/result-dialog-ancient.component';
 
 @NgModule({
   declarations: [									
@@ -37,7 +38,8 @@ import { ResultDialogRecordComponent } from './medical-records/record-form/resul
       MedicalRecordsComponent,
       PatientRecordComponent,
       RecordFormComponent,
-      ResultDialogRecordComponent
+      ResultDialogRecordComponent,
+      ResultDialogAncientComponent
    ],
   imports: [
     BrowserModule,
