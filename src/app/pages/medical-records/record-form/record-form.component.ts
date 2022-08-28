@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ResultDialogRecordComponent } from '../../dialogs/result-dialog-record/result-dialog-record.component';
 import {FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
-import { ResultDialogAncientComponent } from 'src/app/dialogs/result-dialog-ancient/result-dialog-ancient.component';
-import { ResultDialogClinicComponent } from 'src/app/dialogs/result-dialog-clinic/result-dialog-clinic.component';
-import { ResultDialogTreatmentComponent } from 'src/app/dialogs/result-dialog-treatment/result-dialog-treatment.component';
+import { ResultDialogAncientComponent } from 'src/app/pages/dialogs/result-dialog-ancient/result-dialog-ancient.component';
+import { ResultDialogClinicComponent } from 'src/app/pages/dialogs/result-dialog-clinic/result-dialog-clinic.component';
+import { ResultDialogTreatmentComponent } from 'src/app/pages/dialogs/result-dialog-treatment/result-dialog-treatment.component';
 
 @Component({
   selector: 'app-record-form',

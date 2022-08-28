@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppointmentComponent } from './appointment/appointment.component';
-import { MedicalScheduleComponent } from './appointment/medical-schedule/medical-schedule.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { MedicalRecordsComponent } from './medical-records/medical-records.component';
-import { PatientRecordComponent } from './medical-records/patient-record/patient-record.component';
-import { RecordFormComponent } from './medical-records/record-form/record-form.component';
-import { RegisterMedicalComponent } from './register-medical/register-medical.component';
-import { RegisterStaffComponent } from './register-staff/register-staff.component';
-import { RegisterUserComponent } from './register-user/register-user.component';
+import { AppointmentComponent } from './pages/appointment/appointment.component';
+import { MedicalScheduleComponent } from './pages/appointment/medical-schedule/medical-schedule.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { MedicalRecordsComponent } from './pages/medical-records/medical-records.component';
+import { PatientRecordComponent } from './pages/medical-records/patient-record/patient-record.component';
+import { RecordFormComponent } from './pages/medical-records/record-form/record-form.component';
+import { RegisterMedicalComponent } from './pages/register-medical/register-medical.component';
+import { RegisterStaffComponent } from './pages/register-staff/register-staff.component';
+import { RegisterUserComponent } from './pages/register-user/register-user.component';
 
 const routes: Routes = [
   {path: "register-user",component: RegisterUserComponent},
