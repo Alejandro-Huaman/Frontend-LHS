@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ResultDialogComponent } from '../dialogs/result-dialog/result-dialog.component';
+import { ResultDialogComponent } from '../../dialogs/result-dialog/result-dialog.component';
 import {FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
 
 @Component({
-  selector: 'app-register-staff',
-  templateUrl: './register-staff.component.html',
-  styleUrls: ['./register-staff.component.css']
+  selector: 'app-register-medical',
+  templateUrl: './register-medical.component.html',
+  styleUrls: ['./register-medical.component.css']
 })
-export class RegisterStaffComponent implements OnInit {
+export class RegisterMedicalComponent implements OnInit {
   
-  staffregisterform!:FormGroup;
+  medicalregisterform!:FormGroup;
 
-  constructor(public dialog:MatDialog, private formBuilder:FormBuilder) { }
+
+  constructor(public dialog:MatDialog, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.staffregisterform=this.formBuilder.group({
+    this.medicalregisterform=this.formBuilder.group({
       name:['',Validators.required],
       patternlastname:['',Validators.required],
       matternlastname:['',Validators.required],
@@ -32,5 +33,4 @@ export class RegisterStaffComponent implements OnInit {
   RegisterMethod(){
     const dialogRef = this.dialog.open(ResultDialogComponent)
   }
-
 }
