@@ -21,6 +21,8 @@ import { PatientRecordComponent } from './pages/medical-records/patient-record/p
 import { RecordFormComponent } from './pages/medical-records/record-form/record-form.component';
 import { ResultDialogRecordComponent } from './pages/dialogs/result-dialog-record/result-dialog-record.component';
 import { ResultDialogAncientComponent } from './pages/dialogs/result-dialog-ancient/result-dialog-ancient.component';
+import { ResultDialogClinicComponent } from './pages/dialogs/result-dialog-clinic/result-dialog-clinic.component';
+import { ResultDialogTreatmentComponent } from './pages/dialogs/result-dialog-treatment/result-dialog-treatment.component';
 
 @NgModule({
   declarations: [									
@@ -39,7 +41,9 @@ import { ResultDialogAncientComponent } from './pages/dialogs/result-dialog-anci
       PatientRecordComponent,
       RecordFormComponent,
       ResultDialogRecordComponent,
-      ResultDialogAncientComponent
+      ResultDialogAncientComponent,
+      ResultDialogClinicComponent,
+      ResultDialogTreatmentComponent
    ],
   imports: [
     BrowserModule,
