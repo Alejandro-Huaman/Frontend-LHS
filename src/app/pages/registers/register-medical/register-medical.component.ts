@@ -18,15 +18,15 @@ export class RegisterMedicalComponent implements OnInit {
   ngOnInit() {
     this.medicalregisterform=this.formBuilder.group({
       name:['',Validators.required],
-      patternlastname:['',Validators.required],
-      matternlastname:['',Validators.required],
-      sex:['',Validators.required],
-      email:['',Validators.required],
+      lastname:['',Validators.required],
+      birthday:['',Validators.required],
+      gender:['',Validators.required],
+      address:['',Validators.required],
+      email:['',[Validators.required,Validators.email]],
       phone:['',Validators.required],
-      document:['',Validators.required],
-      numberdocument:['',Validators.required],
       username:['',Validators.required],
       password:['',Validators.required],
+      speciality:['',Validators.required],
      })
   }
 
