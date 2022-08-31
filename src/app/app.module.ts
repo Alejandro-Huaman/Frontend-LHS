@@ -23,6 +23,7 @@ import { ResultDialogRecordComponent } from './pages/dialogs/result-dialog-recor
 import { ResultDialogAncientComponent } from './pages/dialogs/result-dialog-ancient/result-dialog-ancient.component';
 import { ResultDialogClinicComponent } from './pages/dialogs/result-dialog-clinic/result-dialog-clinic.component';
 import { ResultDialogTreatmentComponent } from './pages/dialogs/result-dialog-treatment/result-dialog-treatment.component';
+import { UpdateRecordComponent } from './pages/medical-records/update-record/update-record.component';
 
 @NgModule({
   declarations: [									
@@ -43,7 +44,8 @@ import { ResultDialogTreatmentComponent } from './pages/dialogs/result-dialog-tr
       ResultDialogRecordComponent,
       ResultDialogAncientComponent,
       ResultDialogClinicComponent,
-      ResultDialogTreatmentComponent
+      ResultDialogTreatmentComponent,
+      UpdateRecordComponent
    ],
   imports: [
     BrowserModule,

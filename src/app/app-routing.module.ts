@@ -7,6 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { MedicalRecordsComponent } from './pages/medical-records/medical-records.component';
 import { PatientRecordComponent } from './pages/medical-records/patient-record/patient-record.component';
 import { RecordFormComponent } from './pages/medical-records/record-form/record-form.component';
+import { UpdateRecordComponent } from './pages/medical-records/update-record/update-record.component';
 import { RegisterMedicalComponent } from './pages/registers/register-medical/register-medical.component';
 import { RegisterStaffComponent } from './pages/registers/register-staff/register-staff.component';
 import { RegisterUserComponent } from './pages/registers/register-user/register-user.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: "medical-records",component: MedicalRecordsComponent},
   {path: "patient-record",component: PatientRecordComponent},
   {path: "record-form",component: RecordFormComponent},
+  {path: "update-record",component: UpdateRecordComponent},
 ];
 
 @NgModule({
