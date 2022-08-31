@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
+import { DialogUpdateDataComponent } from '../../dialogs/dialog-update-data/dialog-update-data.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-update-record',
@@ -11,10 +14,20 @@ export class UpdateRecordComponent implements OnInit {
   displaydiagnostic!:boolean;
   displaytreatment!:boolean;
   displaydata!:boolean;
+  updatepersonaldata!:FormGroup;
+  updatediagnostic!:boolean;
   
-  constructor() { }
+  constructor(private formBuilder:FormBuilder, public dialog:MatDialog) { }
 
   ngOnInit() {
+    this.updatepersonaldata=this.formBuilder.group({
+      name:['',Validators.required],
+      lastname:['',Validators.required],
+      email:['',Validators.required],
+      dni:['',Validators.required],
+      phone:['',Validators.required],
+     })
+     this.updatediagnostic = false;
   }
 
   DisplayInfo(){
@@ -49,4 +62,15 @@ export class UpdateRecordComponent implements OnInit {
     }
   }
 
+  UpdateDataMethod(){
+    const dialogRef = this.dialog.open(DialogUpdateDataComponent)
+  }
+
+  UpdateDiagnostic(){
+      this.updatediagnostic = true;
+  }
+  FinishUpdateDiagnostic(){
+    const dialogRef = this.dialog.open(DialogUpdateDataComponent)
+    this.updatediagnostic = false;
+  }
 }
