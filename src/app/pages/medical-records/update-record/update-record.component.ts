@@ -16,6 +16,7 @@ export class UpdateRecordComponent implements OnInit {
   displaydata!:boolean;
   updatepersonaldata!:FormGroup;
   updatediagnostic!:boolean;
+  updatetreatment!:boolean;
   
   constructor(private formBuilder:FormBuilder, public dialog:MatDialog) { }
 
@@ -28,6 +29,7 @@ export class UpdateRecordComponent implements OnInit {
       phone:['',Validators.required],
      })
      this.updatediagnostic = false;
+     this.updatetreatment = false;
   }
 
   DisplayInfo(){
@@ -73,4 +75,14 @@ export class UpdateRecordComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogUpdateDataComponent)
     this.updatediagnostic = false;
   }
+  
+  UpdateTreatment(){
+    this.updatetreatment = true
+  }
+
+  FinishUpdateTreatment(){
+    const dialogRef = this.dialog.open(DialogUpdateDataComponent)
+    this.updatetreatment = false;
+  }
+
 }

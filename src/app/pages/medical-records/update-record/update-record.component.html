@@ -28,6 +28,7 @@
         <table class="w-full">
             <tr>
               <th class="w-full">
+                <!--Datos personales-->
                 <button class="w-full" (click)="DisplayInfo()">
                     <mat-toolbar color="primary">
                       <h1>Datos personales</h1>
@@ -110,6 +111,7 @@
                     <button mat-raised-button color="primary" class="w-40" (click)="UpdateDataMethod()" [disabled]="updatepersonaldata.invalid">Actualizar datos</button>
                   </div>
                 </div>
+                <!--Diagnostico-->
                 <div class="pt-10"></div>
                 <button class="w-full" (click)="DisplayDiagnostic()">
                   <mat-toolbar color="primary">
@@ -217,6 +219,7 @@
                     </div>
                   </div>
                 </div>
+                <!--Tratamiento-->
                 <div class="pt-10"></div>
                 <button class="w-full" (click)="DisplayTreatment()">
                   <mat-toolbar color="primary">
@@ -228,8 +231,96 @@
                 </button>
                 <div *ngIf="displaytreatment == true">
                   <div class="pb-10"></div>
-                  <h1>Hola</h1>
+                  <div class="inline-flex w-full">
+                  <table class="w-full">
+                    <tr>
+                      <th class="border-2 w-40">
+                          <div class="pb-3"></div>
+                          <h1>#</h1>
+                          <div class="pb-3"></div>
+                          <mat-divider></mat-divider>
+                          <div class="pb-3"></div>
+                            <h2 class="font-normal">1</h2>
+                          <div class="pb-3"></div>
+                      </th>
+                      <th class="border-2">
+                          <div class="pb-3"></div>  
+                          <h1>Medicamento</h1>
+                          <div class="pb-3"></div>
+                          <mat-divider></mat-divider>
+                          <div class="pb-3"></div>
+                            <div *ngIf="updatetreatment == true">
+                              <mat-form-field appearance="outline" class="w-28">
+                                <input matInput placeholder="Medicamento">
+                              </mat-form-field>
+                            </div>
+                            <div *ngIf="updatetreatment == false">
+                              <h2 class="font-normal">Captopril</h2>
+                            </div>
+                          <div class="pb-3"></div>
+                      </th>
+                      <th class="border-2">
+                          <div class="pb-3"></div>
+                          <h1>Cantidad diaria</h1>
+                          <div class="pb-3"></div>
+                          <mat-divider></mat-divider>
+                          <div class="pb-3"></div>
+                          <div *ngIf="updatetreatment == true">
+                            <mat-form-field appearance="outline" class="w-28">
+                              <input matInput placeholder="Cantidad">
+                            </mat-form-field>
+                          </div>
+                          <div *ngIf="updatetreatment == false">
+                            <h2 class="font-normal">1</h2>
+                          </div>
+                          <div class="pb-3"></div>
+                        </th>
+                        <th class="border-2">
+                          <div class="pb-3"></div>
+                          <h1>Días</h1>
+                          <div class="pb-3"></div>
+                          <mat-divider></mat-divider>
+                          <div class="pb-3"></div>
+                          <div *ngIf="updatetreatment == true">
+                            <mat-form-field appearance="outline" class="w-28">
+                              <input matInput placeholder="Días">
+                            </mat-form-field>
+                          </div>
+                          <div *ngIf="updatetreatment == false">
+                            <h2 class="font-normal">365</h2>
+                          </div>
+                          <div class="pb-3"></div>
+                        </th>
+                        <th class="align-top border-2">
+                          <div class="pb-3"></div>
+                          <h1>Indicación</h1>
+                          <div class="pb-3"></div>
+                          <mat-divider></mat-divider>
+                          <div class="pb-3"></div>
+                          <div *ngIf="updatetreatment == true">
+                            <mat-form-field appearance="outline" class="w-28">
+                              <input matInput placeholder="Indicación">
+                            </mat-form-field>
+                          </div>
+                          <div *ngIf="updatetreatment == false">
+                            <h2 class="font-normal">Cada 12 horas</h2>
+                          </div>
+                        </th>
+                    </tr>
+                  </table>
+                  <div class="pr-10"></div>
+                    <div class="pt-10">
+                      <button>
+                          <img src="../../../../assets/images/edit-record.png" class="w-10 h-10" (click)="UpdateTreatment()">
+                      </button>
+                    </div>
+                    <div class="pr-10"></div>
+                    <div class="pt-10">
+                      <button mat-raised-button color="primary" (click)="FinishUpdateTreatment()">Actualizar</button>
+                    </div>
+                  </div>
                 </div>
+                <!--Datos nefrologicos-->
                 <div class="pt-10"></div>
                 <button class="w-full" (click)="DisplayData()">
                   <mat-toolbar color="primary">
