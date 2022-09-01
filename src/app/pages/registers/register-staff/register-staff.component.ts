@@ -11,19 +11,20 @@ import {FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/
 export class RegisterStaffComponent implements OnInit {
   
   staffregisterform!:FormGroup;
+  role!:string;
+  rolelist:string[] = ["Admin","Nurse"]
 
   constructor(public dialog:MatDialog, private formBuilder:FormBuilder) { }
 
   ngOnInit() {
     this.staffregisterform=this.formBuilder.group({
       name:['',Validators.required],
-      patternlastname:['',Validators.required],
-      matternlastname:['',Validators.required],
-      sex:['',Validators.required],
-      email:['',Validators.required],
+      lastname:['',Validators.required],
+      dni:['',Validators.required],
+      gender:['',Validators.required],
+      email:['',[Validators.required,Validators.email]],
       phone:['',Validators.required],
-      document:['',Validators.required],
-      numberdocument:['',Validators.required],
+      role:['',Validators.required],
       username:['',Validators.required],
       password:['',Validators.required],
      })

@@ -21,12 +21,6 @@
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Cumpleaños</mat-label>
-              <input matInput placeholder="Ingrese su cumpleaños" formControlName="birthday" required>
-              <mat-error *ngIf="medicalregisterform.controls['birthday'].dirty && medicalregisterform.hasError('required') || medicalregisterform.controls['birthday'].invalid">Complete este campo es requerido!</mat-error>
-            </mat-form-field>
-            <br>
-            <mat-form-field appearance="outline" class="w-full">
               <mat-label>Sexo</mat-label> <!--Combo Box-->
               <mat-select formControlName="gender">
                 <mat-option value="uno">Masculino</mat-option>
@@ -36,7 +30,13 @@
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Dirección</mat-label> <!--Combo Box-->
+              <mat-label>DNI</mat-label>
+              <input matInput placeholder="Ingrese numero de DNI" formControlName="dni" required>
+              <mat-error *ngIf="medicalregisterform.controls['dni'].dirty && medicalregisterform.hasError('required') || medicalregisterform.controls['dni'].invalid">Complete este campo es requerido!</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Dirección</mat-label> 
               <input matInput placeholder="Ingrese su dirección" formControlName="address" required>
               <mat-error *ngIf="medicalregisterform.controls['address'].dirty && medicalregisterform.hasError('required') || medicalregisterform.controls['address'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
@@ -68,10 +68,24 @@
             <br>
             <mat-form-field appearance="outline" class="w-full">
               <mat-label>Especialidad</mat-label>
-              <input matInput placeholder="Ingrese especialidad" formControlName="speciality" required>
+              <mat-select formControlName="speciality">
+                <div *ngFor="let specialvariable of specialistlist">
+                  <mat-option value="uno">{{specialvariable}}</mat-option>
+                </div>
+              </mat-select>
               <mat-error *ngIf="medicalregisterform.controls['speciality'].dirty && medicalregisterform.hasError('required') || medicalregisterform.controls['speciality'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
-            
+            <br>
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Turno</mat-label>
+              <mat-select formControlName="shift">
+                <div *ngFor="let shift of shiftlist">
+                  <mat-option value="uno">{{shift}}</mat-option>
+                </div>
+              </mat-select>
+              <mat-error *ngIf="medicalregisterform.controls['shift'].dirty && medicalregisterform.hasError('required') || medicalregisterform.controls['shift'].invalid">Complete este campo es requerido!</mat-error>
+            </mat-form-field>
+
             <div class="text-center">
               <button color = "primary" mat-raised-button (click)="RegisterMethod()" [disabled]="medicalregisterform.invalid">Registrarse</button>
             </div>  

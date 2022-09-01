@@ -9,36 +9,37 @@
             <mat-card-title class="text-left">Regístrate Personal</mat-card-title>
             <form class="form text-left" [formGroup]="staffregisterform">
             <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Nombre</mat-label>
-              <input matInput placeholder="Ingrese nombre" formControlName="name" required>
+              <mat-label>Nombres</mat-label>
+              <input matInput placeholder="Ingrese sus nombres" formControlName="name" required>
               <mat-error *ngIf="staffregisterform.controls['name'].dirty && staffregisterform.hasError('required') || staffregisterform.controls['name'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Apellido Paterno</mat-label>
-              <input matInput placeholder="Ingrese apellido paterno" formControlName="patternlastname" required>
-              <mat-error *ngIf="staffregisterform.controls['patternlastname'].dirty && staffregisterform.hasError('required') || staffregisterform.controls['patternlastname'].invalid">Complete este campo es requerido!</mat-error>
+              <mat-label>Apellidos</mat-label>
+              <input matInput placeholder="Ingrese sus apellidos" formControlName="lastname" required>
+              <mat-error *ngIf="staffregisterform.controls['lastname'].dirty && staffregisterform.hasError('required') || staffregisterform.controls['lastname'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Apellido Materno</mat-label>
-              <input matInput placeholder="Ingrese apellido materno" formControlName="matternlastname" required>
-              <mat-error *ngIf="staffregisterform.controls['matternlastname'].dirty && staffregisterform.hasError('required') || staffregisterform.controls['matternlastname'].invalid">Complete este campo es requerido!</mat-error>
+              <mat-label>DNI</mat-label>
+              <input matInput placeholder="Ingrese sun DNI" formControlName="dni" required>
+              <mat-error *ngIf="staffregisterform.controls['dni'].dirty && staffregisterform.hasError('required') || staffregisterform.controls['dni'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
               <mat-label>Sexo</mat-label> <!--Combo Box-->
-              <mat-select formControlName="sex">
+              <mat-select formControlName="gender">
                 <mat-option value="uno">Masculino</mat-option>
                 <mat-option value="dos">Femenino</mat-option>
               </mat-select>
-              <mat-error *ngIf="staffregisterform.controls['sex'].dirty && staffregisterform.hasError('required') || staffregisterform.controls['sex'].invalid">Complete este campo es requerido!</mat-error>
+              <mat-error *ngIf="staffregisterform.controls['gender'].dirty && staffregisterform.hasError('required') || staffregisterform.controls['gender'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
               <mat-label>Email</mat-label>
               <input matInput placeholder="Ingrese email" formControlName="email" required>
-              <mat-error *ngIf="staffregisterform.controls['email'].dirty && staffregisterform.hasError('required') || staffregisterform.controls['email'].invalid">Complete este campo es requerido!</mat-error>
+              <mat-error *ngIf="staffregisterform.controls['email'].touched && staffregisterform.controls['email'].hasError('required')">Complete este campo es requerido!</mat-error>
+              <mat-error *ngIf="staffregisterform.controls['email'].dirty && staffregisterform.controls['email'].hasError('email')">Email invalido complete con un email!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
@@ -48,18 +49,13 @@
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Documento</mat-label> <!--Combo Box-->
-              <mat-select formControlName="document">
-                <mat-option value="uno">DNI</mat-option>
-                <mat-option value="dos">Carnet de Extranjeria</mat-option>
+              <mat-label>Rol</mat-label>
+              <mat-select formControlName="role">
+                <div *ngFor="let role of rolelist">
+                  <mat-option value="uno">{{role}}</mat-option>
+                </div>
               </mat-select>
-              <mat-error *ngIf="staffregisterform.controls['document'].dirty && staffregisterform.hasError('required') || staffregisterform.controls['document'].invalid">Complete este campo es requerido!</mat-error>
-            </mat-form-field>
-            <br>
-            <mat-form-field appearance="outline" class="w-full">
-              <mat-label>Numero de Documento</mat-label>
-              <input matInput placeholder="Ingrese Numero de documento" formControlName="numberdocument" required>
-              <mat-error *ngIf="staffregisterform.controls['numberdocument'].dirty && staffregisterform.hasError('required') || staffregisterform.controls['numberdocument'].invalid">Complete este campo es requerido!</mat-error>
+              <mat-error *ngIf="staffregisterform.controls['role'].dirty && staffregisterform.hasError('required') || staffregisterform.controls['role'].invalid">Complete este campo es requerido!</mat-error>
             </mat-form-field>
             <br>
             <mat-form-field appearance="outline" class="w-full">
