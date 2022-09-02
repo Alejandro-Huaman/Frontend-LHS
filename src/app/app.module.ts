@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
@@ -12,7 +11,7 @@ import { ResultDialogComponent } from './pages/dialogs/result-dialog/result-dial
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterMedicalComponent } from './pages/registers/register-medical/register-medical.component';
 import { RegisterStaffComponent } from './pages/registers/register-staff/register-staff.component';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './pages/homes/home-doctor/home.component';
 import { AppointmentComponent } from './pages/appointment/appointment.component';
 import { MedicalScheduleComponent } from './pages/appointment/medical-schedule/medical-schedule.component';
 import { ResultDialogAppointmentComponent } from './pages/dialogs/result-dialog-appointment/result-dialog-appointment.component';
@@ -25,6 +24,12 @@ import { ResultDialogClinicComponent } from './pages/dialogs/result-dialog-clini
 import { ResultDialogTreatmentComponent } from './pages/dialogs/result-dialog-treatment/result-dialog-treatment.component';
 import { UpdateRecordComponent } from './pages/medical-records/update-record/update-record.component';
 import { DialogUpdateDataComponent } from './pages/dialogs/dialog-update-data/dialog-update-data.component';
+import { HomePatientComponent } from './pages/homes/home-patient/home-patient.component';
+import { HomeStaffComponent } from './pages/homes/home-staff/home-staff.component';
+import { UsersPageComponent } from './pages/users-page/users-page.component';
+import { UpdateDoctorComponent } from './pages/users-page/update-dialogs/update-doctor/update-doctor.component';
+import { UpdateStaffComponent } from './pages/users-page/update-dialogs/update-staff/update-staff.component';
+import { UpdatePatientComponent } from './pages/users-page/update-dialogs/update-patient/update-patient.component';
 
 @NgModule({
   declarations: [									
@@ -47,14 +52,20 @@ import { DialogUpdateDataComponent } from './pages/dialogs/dialog-update-data/di
       ResultDialogClinicComponent,
       ResultDialogTreatmentComponent,
       UpdateRecordComponent,
-      DialogUpdateDataComponent
+      DialogUpdateDataComponent,
+      HomePatientComponent, 
+      HomeStaffComponent,
+      UsersPageComponent,
+      UpdateDoctorComponent,
+      UpdateStaffComponent,
+      UpdatePatientComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
