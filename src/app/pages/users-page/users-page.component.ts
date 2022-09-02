@@ -27,16 +27,22 @@ export class UsersPageComponent implements OnInit {
     console.log(this.medicals)
   }
 
-  UpdateStaff(){
-    const dialogRef = this.dialog.open(UpdateStaffComponent) 
+  UpdateStaff(medicaltest:string){
+    this.dialog.open(UpdateStaffComponent,{
+      data:medicaltest 
+    })
   }
 
-  UpdateDoctor(){
-    const dialogRef = this.dialog.open(UpdateDoctorComponent)
+  UpdateDoctor(medicaltest:string){
+    this.dialog.open(UpdateDoctorComponent,{
+      data:medicaltest
+    })
   }
 
-  UpdatePatient(){
-    const dialogRef = this.dialog.open(UpdatePatientComponent)
+  UpdatePatient(medicaltest:string){
+    this.dialog.open(UpdatePatientComponent,{
+      data:medicaltest
+    })
   }
 
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-update-doctor',
@@ -13,7 +14,7 @@ export class UpdateDoctorComponent implements OnInit {
   shift!:string;
   shiftlist:string[] = ["Turno Mañana","Turno Tarde","Turno Noche"]
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, @Inject(MAT_DIALOG_DATA) public editdoctordata:any) { }
 
   ngOnInit() {
     this.medicalupdateform=this.formBuilder.group({
@@ -29,6 +30,10 @@ export class UpdateDoctorComponent implements OnInit {
       speciality:['',Validators.required],
       shift:['',Validators.required],
      })
+
+    if(this.editdoctordata){
+      this.medicalupdateform.controls['name'].setValue(this.editdoctordata);
+    }
   }
 
 }

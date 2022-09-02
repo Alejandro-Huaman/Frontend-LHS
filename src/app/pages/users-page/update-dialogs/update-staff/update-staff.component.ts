@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-update-staff',
@@ -12,7 +13,7 @@ export class UpdateStaffComponent implements OnInit {
   role!:string;
   rolelist:string[] = ["Admin","Nurse"]
   
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder, @Inject(MAT_DIALOG_DATA) public editstaffdata:any) { }
 
   ngOnInit() {
     this.staffeditform=this.formBuilder.group({
@@ -26,6 +27,10 @@ export class UpdateStaffComponent implements OnInit {
       username:['',Validators.required],
       password:['',Validators.required],
      })
+     
+     if(this.editstaffdata){
+        this.staffeditform.controls['name'].setValue(this.editstaffdata);
+     }
   }
 
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-update-patient',
@@ -10,7 +11,7 @@ export class UpdatePatientComponent implements OnInit {
 
   userupdateform!:FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, @Inject(MAT_DIALOG_DATA) public editpatientdata:any) { }
 
   ngOnInit() {
     this.userupdateform=this.formBuilder.group({
@@ -25,6 +26,12 @@ export class UpdatePatientComponent implements OnInit {
       username:['',Validators.required],
       password:['',Validators.required],
      })
+
+    if(this.editpatientdata){
+      this.userupdateform.controls['name'].setValue(this.editpatientdata);
+    }
   }
+
+
 
 }
